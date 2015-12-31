@@ -20,10 +20,9 @@ var CustomerSchema = {
 
 function Customer() {
     this.getModel = function () {
-		console.log("mogno db url = "+Define.modelDBURI)
         var db = Connection.getConnection(Define.modelDBURI, {});
-        var customerSchema = new Schema(CustomerSchema);
-        return db.model('Customer', customerSchema, 'Customer');
+        var schemaObj = new Schema(CustomerSchema);
+        return db.model('Customer', schemaObj, 'Customer');
     }
 }
 

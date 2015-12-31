@@ -9,6 +9,7 @@ var Config = require("./Config/Config.json");
 
 app.use('/CTS', admin); // mount the sub app
 app.use('/CTS', another); // mount the sub app
+app.use("/static", express.static("./Static"));
 
 app.locals.appName = Config.AppName;
 

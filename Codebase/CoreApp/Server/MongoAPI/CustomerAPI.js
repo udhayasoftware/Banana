@@ -13,7 +13,7 @@ function CustomerAPI() {
             if (err)
                 callback({"result": "failed", "error": err.errmsg});
             else
-                callback({"result": "success", "message": "data saved"});
+                callback({"result": "success", "message": "data saved", "id": data.id});
         });
     }
     this.removeData = function (queryObj, callback) {

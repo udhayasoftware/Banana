@@ -13,7 +13,7 @@ function BaseController() {
         var action = controller[svcReqObj.request.params.Action];
         if (action != undefined) {
             action(svcReqObj);
-        }else{
+        } else {
             throw {"result": "failed", "message": "Action Not Implemented"};
         }
     }

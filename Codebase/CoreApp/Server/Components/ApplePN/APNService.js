@@ -14,15 +14,15 @@ function APNService(app, feedbackEnabled) {
         note.payload = {'messageFrom': this.appName};
         apnConnection.pushNotification(note, myDevice);
     }
-    if(feedbackEnabled){
+    if (feedbackEnabled) {
         var options = {
             "batchFeedback": true,
             "interval": 300
         };
 
         var feedback = new apn.Feedback(options);
-        feedback.on("feedback", function(devices) {
-            devices.forEach(function(item) {
+        feedback.on("feedback", function (devices) {
+            devices.forEach(function (item) {
                 // Do something with item.device and item.time;
             });
         });

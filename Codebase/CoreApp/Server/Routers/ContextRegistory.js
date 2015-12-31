@@ -6,11 +6,12 @@ function contextRegistory(app, vendor) {
     // CommonRouters
     routerHandler.registerCRUD(root + '/crud/:Controller', "Customer");
 
-    routerHandler.registerGet(root + '/api/:Controller/:Action', "Authentication");
-    routerHandler.registerPost(root + '/api/:Controller/:Action', "DashBoard");
-    routerHandler.registerPut(root + '/api/:Controller/:Action', "Email");
-    routerHandler.registerOption(root + '/api/:Controller/:Action', "Comments");
+    routerHandler.registerGet(root + '/api/:Controller/:Action', false);
+    routerHandler.registerPost(root + '/api/:Controller/:Action', false);
+    routerHandler.registerPut(root + '/api/:Controller/:Action', false);
+    routerHandler.registerOption(root + '/api/:Controller/:Action', false);
 }
+
 
 exports.contextRegistory = contextRegistory;
 

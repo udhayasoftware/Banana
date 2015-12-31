@@ -3,18 +3,20 @@
  */
 
 var ResponseHandler = require('../../Handlers/ResponseHandler');
+var UserAPI = require("../../MongoAPI/UserAPI");
 
 function Authentication() {
 
     this.login = function (svcReqObj) {
         var responseHandler = new ResponseHandler();
-        var user = svcReqObj.request.query["user"];
-        var pass = svcReqObj.request.query["pass"];
-        if (user == "udhay" && pass == "super") {
-            responseHandler.sendResponse(svcReqObj, {"result": "success", "message": "login success"});
-        } else {
-            responseHandler.sendResponse(svcReqObj, {"result": "failed", "message": "Invalid credentials"});
-        }
+
+        var queryObj = {
+            find: svcReqObj.request.body ? svcReqObj.request.body : {},
+            entity: svcReqObj.controller
+        };
+        new UserAPI().findData(queryObj, function (output) {
+            responseHandler.sendResponse(svcReqObj, output);
+        })
     }
 
     this.logout = function (svcReqObj) {

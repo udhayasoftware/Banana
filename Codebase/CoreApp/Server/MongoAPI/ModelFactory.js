@@ -1,4 +1,5 @@
 var Customer = require("./Models/Customer");
+var User = require("./Models/User");
 
 function ModelFactory() {
     this.getEntityModel = function (name) {
@@ -7,7 +8,12 @@ function ModelFactory() {
                 return new Customer().getModel();
                 break;
             case "User":
-                return Customer;
+                return new User().getModel();
+                break;
+            case "Authentication":
+                return new User().getModel();
+                break;
+            default :
                 break;
         }
     }

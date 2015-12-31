@@ -1,7 +1,7 @@
-function ServiceRequest(request, response, controller, isCRUD) {
+function ServiceRequest(request, response, isCRUD) {
     this.request = request;
     this.response = response;
-    this.controller = controller;
+    this.controller = request.params['Controller'];
     this.isCRUD = isCRUD;
 }
 

@@ -7,9 +7,8 @@ var another = express();
 var Server = require("./Server/Routers/Server");
 var Config = require("./Config/Config.json");
 
-app.use('/CTS', admin); // mount the sub app
-app.use('/CTS', another); // mount the sub app
-app.use("/static", express.static("./Static"));
+app.use('/Banana', admin); // mount the sub app
+app.use("/", express.static(__dirname + "/Static"));
 
 app.locals.appName = Config.AppName;
 

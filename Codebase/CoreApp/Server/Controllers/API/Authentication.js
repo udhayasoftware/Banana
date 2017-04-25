@@ -1,6 +1,3 @@
-/**
- * Created by 324401 on 8/28/2015.
- */
 
 var ResponseHandler = require('../../Handlers/ResponseHandler');
 var UserAPI = require("../../MongoAPI/UserAPI");
